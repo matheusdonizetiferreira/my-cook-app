@@ -11,7 +11,8 @@ export function Ingredients( { ingredients }: Props) {
     return (
         <ScrollView
             contentContainerStyle={styles.container}
-            showsHorizontalScrollIndicator
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
         >
             {ingredients.map( (ingredient) => (
                 <Ingredient
