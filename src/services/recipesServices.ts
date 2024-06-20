@@ -8,4 +8,15 @@ async function findBIngredientsIds(ids: string[]){
     return data ?? []
 }
 
-export { findBIngredientsIds }
+async function show(id: string){
+    const { data } = await supabase
+    .from("recipes")
+    .select()
+    .eq("id", id)
+    .returns<RecipeResponse>()
+    .single()
+
+    return data
+}
+
+export { findBIngredientsIds, show }
